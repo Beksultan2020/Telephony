@@ -9,4 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface ContactSQLRepository extends JpaRepository<ContactSQL,Long> {
+    ContactSQL findByFirstPhoneNumberAndSecondPhoneNumber(String firstPhoneNumber,String secondPhoneNumber);
+
+    ContactSQL findByFirstPhoneNumberOrSecondPhoneNumber(String firstPhoneNumber,String secondPhoneNumber);
+
+    ContactSQL deleteByFirstPhoneNumberOrSecondPhoneNumber(String firstPhoneNumber,String secondPhoneNumber);
 }

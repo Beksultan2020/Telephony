@@ -10,7 +10,9 @@ public interface ContactSQLService {
     List<ContactSQLDto> getAllContacts();
     List<ContactSQLDto> getAllContactsFiltered(int limit,int offset);
     ContactSQLDto getContactById(Long id);
+    ContactSQLDto getContactByPhoneNumber(String phoneNumber);
     ContactSQLDto createContact(ContactSQL contactSQL);
     ContactSQLDto updateContact(Long id,ContactSQLDto contactSQLDto);
-    void deleteContact(Long id);
+    void deleteContactById(Long id);
+    void deleteContactByPhoneNumber(String phoneNumber);
 }

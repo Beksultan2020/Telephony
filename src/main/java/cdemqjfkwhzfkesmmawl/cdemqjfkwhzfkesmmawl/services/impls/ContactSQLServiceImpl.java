@@ -8,6 +8,7 @@ import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services.ContactSQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -34,7 +35,31 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     }
 
     @Override
+    public ContactSQLDto getContactByPhoneNumber(String phoneNumber) {
+        ContactSQL contactSQL=contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
+        if (contactSQL!=null){
+            return contactSQLMapper.toDto(contactSQL);
+        }
+        /*else {
+            throw new RuntimeException("Contact not found");
+        }*/
+        return null;
+    }
+
+    @Override
     public ContactSQLDto createContact(ContactSQL contactSQL) {
+        ContactSQL findContactSQL=contactSQLRepository.findByFirstPhoneNumberAndSecondPhoneNumber(contactSQL.getFirstPhoneNumber(), contactSQL.getSecondPhoneNumber());
+        if(findContactSQL==null){
+            ContactSQL newContactSQL=new ContactSQL();
+            newContactSQL.setName(contactSQL.getName());
+            newContactSQL.setDate_Of_Birth(contactSQL.getDate_Of_Birth());
+            newContactSQL.setFirstPhoneNumber(contactSQL.getFirstPhoneNumber());
+            newContactSQL.setSecondPhoneNumber(contactSQL.getSecondPhoneNumber());
+            newContactSQL.setCreationDate(LocalDate.now());
+
+            ContactSQL saveInDto=contactSQLRepository.save(newContactSQL);
+            return contactSQLMapper.toDto(saveInDto);
+        }
         return null;
     }
 
@@ -44,7 +69,15 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     }
 
     @Override
-    public void deleteContact(Long id) {
+    public void deleteContactById(Long id) {
+        contactSQLRepository.deleteById(id);
+    }
 
+    @Override
+    public void deleteContactByPhoneNumber(String phoneNumber) {
+        ContactSQL contactSQL=contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
+        if (contactSQL!=null){
+            contactSQLRepository.deleteByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
+        }
     }
 }
