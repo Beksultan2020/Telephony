@@ -1,13 +1,7 @@
 package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -16,7 +10,8 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Contact {
+@Builder
+public class ContactSQL {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
