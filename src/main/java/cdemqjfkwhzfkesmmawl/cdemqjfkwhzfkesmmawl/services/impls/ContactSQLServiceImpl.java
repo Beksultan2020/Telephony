@@ -17,9 +17,10 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     private ContactSQLRepository contactSQLRepository;
     @Autowired
     private ContactSQLMapper contactSQLMapper;
+
     @Override
     public List<ContactSQLDto> getAllContacts() {
-        List<ContactSQL> contactSQLS=contactSQLRepository.findAll();
+        List<ContactSQL> contactSQLS = contactSQLRepository.findAll();
         return contactSQLMapper.toDtoList(contactSQLS);
     }
 
@@ -30,14 +31,14 @@ public class ContactSQLServiceImpl implements ContactSQLService {
 
     @Override
     public ContactSQLDto getContactById(Long id) {
-        ContactSQL contactSQL=contactSQLRepository.findById(id).orElseThrow();
+        ContactSQL contactSQL = contactSQLRepository.findById(id).orElseThrow();
         return contactSQLMapper.toDto(contactSQL);
     }
 
     @Override
     public ContactSQLDto getContactByPhoneNumber(String phoneNumber) {
-        ContactSQL contactSQL=contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
-        if (contactSQL!=null){
+        ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber, phoneNumber);
+        if (contactSQL != null) {
             return contactSQLMapper.toDto(contactSQL);
         }
         /*else {
@@ -48,23 +49,46 @@ public class ContactSQLServiceImpl implements ContactSQLService {
 
     @Override
     public ContactSQLDto createContact(ContactSQL contactSQL) {
-        ContactSQL findContactSQL=contactSQLRepository.findByFirstPhoneNumberAndSecondPhoneNumber(contactSQL.getFirstPhoneNumber(), contactSQL.getSecondPhoneNumber());
-        if(findContactSQL==null){
-            ContactSQL newContactSQL=new ContactSQL();
+        ContactSQL findContactSQL = contactSQLRepository.findByFirstPhoneNumberAndSecondPhoneNumber(contactSQL.getFirstPhoneNumber(), contactSQL.getSecondPhoneNumber());
+        if (findContactSQL == null) {
+            ContactSQL newContactSQL = new ContactSQL();
             newContactSQL.setName(contactSQL.getName());
             newContactSQL.setDate_Of_Birth(contactSQL.getDate_Of_Birth());
             newContactSQL.setFirstPhoneNumber(contactSQL.getFirstPhoneNumber());
             newContactSQL.setSecondPhoneNumber(contactSQL.getSecondPhoneNumber());
             newContactSQL.setCreationDate(LocalDate.now());
 
-            ContactSQL saveInDto=contactSQLRepository.save(newContactSQL);
+            ContactSQL saveInDto = contactSQLRepository.save(newContactSQL);
             return contactSQLMapper.toDto(saveInDto);
         }
         return null;
     }
 
+    // Надо доработать код для исключении и тд!
     @Override
-    public ContactSQLDto updateContact(Long id, ContactSQLDto contactSQLDto) {
+    public ContactSQLDto updateContactById(ContactSQLDto contactSQLDto) {
+        ContactSQL contactSQL = contactSQLRepository.findById(contactSQLDto.getId()).orElseThrow();
+        contactSQL.setName(contactSQLDto.getName());
+        contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
+        contactSQL.setFirstPhoneNumber(contactSQLDto.getFirstPhoneNumber());
+        contactSQL.setSecondPhoneNumber(contactSQLDto.getSecondPhoneNumber());
+
+        ContactSQL updatedContact = contactSQLRepository.save(contactSQL);
+        return contactSQLMapper.toDto(updatedContact);
+    }
+
+    @Override
+    public ContactSQLDto updateContactByPhoneNumber(ContactSQLDto contactSQLDto) {
+        ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(contactSQLDto.getFirstPhoneNumber(), contactSQLDto.getSecondPhoneNumber());
+        if (contactSQL != null) {
+            contactSQL.setName(contactSQLDto.getName());
+            contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
+            contactSQL.setFirstPhoneNumber(contactSQLDto.getFirstPhoneNumber());
+            contactSQL.setSecondPhoneNumber(contactSQLDto.getSecondPhoneNumber());
+
+            ContactSQL updatedContact = contactSQLRepository.save(contactSQL);
+            return contactSQLMapper.toDto(updatedContact);
+        }
         return null;
     }
 
@@ -75,9 +99,9 @@ public class ContactSQLServiceImpl implements ContactSQLService {
 
     @Override
     public void deleteContactByPhoneNumber(String phoneNumber) {
-        ContactSQL contactSQL=contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
-        if (contactSQL!=null){
-            contactSQLRepository.deleteByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
+        ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber, phoneNumber);
+        if (contactSQL != null) {
+            contactSQLRepository.deleteByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber, phoneNumber);
         }
     }
 }
