@@ -18,7 +18,7 @@ public class ContactSQL {
     private Long id;
 
     private String name;
-    private String Date_Of_Birth;
+    private String date_Of_Birth;
     private String firstPhoneNumber;
     private String secondPhoneNumber;
     private LocalDate creationDate;

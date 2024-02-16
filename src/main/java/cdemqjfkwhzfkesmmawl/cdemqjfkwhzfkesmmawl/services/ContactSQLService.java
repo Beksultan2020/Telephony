@@ -17,9 +17,9 @@ public interface ContactSQLService {
 
     ContactSQLDto createContact(ContactSQL contactSQL);
 
-    ContactSQLDto updateContactById(ContactSQLDto contactSQLDto);
+    ContactSQLDto updateContactById(Long id,ContactSQLDto contactSQLDto);
 
-    ContactSQLDto updateContactByPhoneNumber(ContactSQLDto contactSQLDto);
+    ContactSQLDto updateContactByPhoneNumber(String phoneNumber,ContactSQLDto contactSQLDto);
 
     void deleteContactById(Long id);
 

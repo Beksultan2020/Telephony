@@ -2,11 +2,10 @@ package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.API;
 
 
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.dto.ContactSQLDto;
+import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.ContactSQL;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services.impls.ContactSQLServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +14,46 @@ import java.util.List;
 public class ContactControllerSQL {
     @Autowired
     private ContactSQLServiceImpl contactSQLServiceImpl;
+
+    @GetMapping
+    public List<ContactSQLDto> getAllContacts(){
+        return contactSQLServiceImpl.getAllContacts();
+    }
+
+    @GetMapping(value = "{id}")
+    public ContactSQLDto getContactById(@PathVariable(value = "id")Long id){
+        return contactSQLServiceImpl.getContactById(id);
+    }
+
+    @GetMapping(value = "phone/{phoneNumber}")
+    public ContactSQLDto getContactByPhoneNumber(@PathVariable(value = "phoneNumber")String phoneNumber){
+        return contactSQLServiceImpl.getContactByPhoneNumber(phoneNumber);
+    }
+
+    @PostMapping
+    public ContactSQLDto creatContact(@RequestBody ContactSQL contactSQL){
+        return contactSQLServiceImpl.createContact(contactSQL);
+    }
+
+    @PutMapping(value = "{id}")
+    public ContactSQLDto updateContactById(@PathVariable(value = "id")Long id,@RequestBody ContactSQLDto contactSQLDto){
+        return contactSQLServiceImpl.updateContactById(id,contactSQLDto);
+    }
+
+    @PutMapping(value = "phone/{phoneNumber}")
+    public ContactSQLDto updateContactByPhoneNumber(@PathVariable(value = "phoneNumber")String phoneNumber,@RequestBody ContactSQLDto contactSQLDto){
+        return contactSQLServiceImpl.updateContactByPhoneNumber(phoneNumber,contactSQLDto);
+    }
+
+    @DeleteMapping(value = "{id}")
+    public void deleteContactById(@PathVariable(value = "id") Long id){
+        contactSQLServiceImpl.deleteContactById(id);
+    }
+
+    @DeleteMapping(value = "{phoneNumber}")
+    public void deleteContactByPhoneNumber(@PathVariable(value = "phoneNumber") String phoneNumber){
+        contactSQLServiceImpl.deleteContactByPhoneNumber(phoneNumber);
+    }
 
 
 }

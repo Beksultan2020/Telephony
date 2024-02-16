@@ -66,8 +66,8 @@ public class ContactSQLServiceImpl implements ContactSQLService {
 
     // Надо доработать код для исключении и тд!
     @Override
-    public ContactSQLDto updateContactById(ContactSQLDto contactSQLDto) {
-        ContactSQL contactSQL = contactSQLRepository.findById(contactSQLDto.getId()).orElseThrow();
+    public ContactSQLDto updateContactById(Long id,ContactSQLDto contactSQLDto) {
+        ContactSQL contactSQL = contactSQLRepository.findById(id).orElseThrow();
         contactSQL.setName(contactSQLDto.getName());
         contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
         contactSQL.setFirstPhoneNumber(contactSQLDto.getFirstPhoneNumber());
@@ -78,8 +78,8 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     }
 
     @Override
-    public ContactSQLDto updateContactByPhoneNumber(ContactSQLDto contactSQLDto) {
-        ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(contactSQLDto.getFirstPhoneNumber(), contactSQLDto.getSecondPhoneNumber());
+    public ContactSQLDto updateContactByPhoneNumber(String phoneNumber,ContactSQLDto contactSQLDto) {
+        ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
         if (contactSQL != null) {
             contactSQL.setName(contactSQLDto.getName());
             contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
