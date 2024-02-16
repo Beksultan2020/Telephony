@@ -50,7 +50,7 @@ public class ContactControllerSQL {
         contactSQLServiceImpl.deleteContactById(id);
     }
 
-    @DeleteMapping(value = "{phoneNumber}")
+    @DeleteMapping(value = "phone/{phoneNumber}")
     public void deleteContactByPhoneNumber(@PathVariable(value = "phoneNumber") String phoneNumber){
         contactSQLServiceImpl.deleteContactByPhoneNumber(phoneNumber);
     }
