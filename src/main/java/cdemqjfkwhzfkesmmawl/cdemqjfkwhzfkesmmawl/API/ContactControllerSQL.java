@@ -3,6 +3,7 @@ package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.API;
 
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.dto.ContactSQLDto;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.ContactSQL;
+import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.Filter;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services.impls.ContactSQLServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,11 @@ public class ContactControllerSQL {
     @GetMapping(value = "phone/{phoneNumber}")
     public ContactSQLDto getContactByPhoneNumber(@PathVariable(value = "phoneNumber")String phoneNumber){
         return contactSQLServiceImpl.getContactByPhoneNumber(phoneNumber);
+    }
+
+    @GetMapping(value = "filteredContacts")
+    public List<ContactSQLDto> getAllFilteredContacts(@RequestBody Filter filter){
+        return contactSQLServiceImpl.getAllContactsFiltered(filter);
     }
 
     @PostMapping

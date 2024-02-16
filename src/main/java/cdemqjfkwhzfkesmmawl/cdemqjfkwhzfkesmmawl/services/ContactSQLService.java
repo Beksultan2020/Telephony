@@ -3,13 +3,14 @@ package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services;
 
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.dto.ContactSQLDto;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.ContactSQL;
+import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.Filter;
 
 import java.util.List;
 
 public interface ContactSQLService {
     List<ContactSQLDto> getAllContacts();
 
-    List<ContactSQLDto> getAllContactsFiltered(int limit, int offset);
+    List<ContactSQLDto> getAllContactsFiltered(Filter filter);
 
     ContactSQLDto getContactById(Long id);
 
@@ -24,4 +25,5 @@ public interface ContactSQLService {
     void deleteContactById(Long id);
 
     void deleteContactByPhoneNumber(String phoneNumber);
+
 }

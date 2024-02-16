@@ -3,6 +3,7 @@ package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services.impls;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.dto.ContactSQLDto;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.mapper.ContactSQLMapper;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.ContactSQL;
+import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.Filter;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.repositories.ContactSQLRepository;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.services.ContactSQLService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,9 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     }
 
     @Override
-    public List<ContactSQLDto> getAllContactsFiltered(int limit, int offset) {
-        return null;
+    public List<ContactSQLDto> getAllContactsFiltered(Filter filter) {
+        List<ContactSQL> contactSQLS=contactSQLRepository.findAllFilteredContacts(filter.getLimit(), filter.getOffset());
+        return contactSQLMapper.toDtoList(contactSQLS);
     }
 
     @Override
@@ -104,4 +106,5 @@ public class ContactSQLServiceImpl implements ContactSQLService {
             contactSQLRepository.deleteByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber, phoneNumber);
         }
     }
+
 }
