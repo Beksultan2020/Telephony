@@ -4,6 +4,7 @@ package cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.repositories;
 import cdemqjfkwhzfkesmmawl.cdemqjfkwhzfkesmmawl.modal.ContactSQL;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,5 +20,5 @@ public interface ContactSQLRepository extends JpaRepository<ContactSQL,Long> {
     void deleteByFirstPhoneNumberOrSecondPhoneNumber(String firstPhoneNumber,String secondPhoneNumber);
 
     @Query("SELECT c FROM ContactSQL c ORDER BY c.id")
-    List<ContactSQL> findAllFilteredContacts(int limit,int offset);
+    List<ContactSQL> findAllFilteredContacts(@Param("limit") int limit, @Param("offset") int offset);
 }
