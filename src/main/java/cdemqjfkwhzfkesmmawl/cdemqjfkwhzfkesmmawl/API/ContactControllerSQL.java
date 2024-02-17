@@ -31,6 +31,8 @@ public class ContactControllerSQL {
         return contactSQLServiceImpl.getContactByPhoneNumber(phoneNumber);
     }
 
+    //Нужно его еще доработать
+    //todo
     @GetMapping(value = "filteredContacts")
     public List<ContactSQLDto> getAllFilteredContacts(@RequestBody Filter filter){
         return contactSQLServiceImpl.getAllContactsFiltered(filter);
