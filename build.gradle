@@ -31,9 +31,12 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+	testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.10.0'
+	testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
+	testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-	testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
+
 
 }
 
