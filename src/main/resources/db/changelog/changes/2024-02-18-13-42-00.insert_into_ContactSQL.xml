@@ -5,48 +5,47 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet id="insert_into_ContactSQL_contact1" author="Beksultan">
-        <insert tableName="ContactSQL">
+        <insert tableName="contactsql">
             <column name="name" value="Beksultan"/>
-            <column name="date_Of_Birth" value="03.03.2004"/>
-            <column name="firstPhoneNumber" value="87028723243"/>
-            <column name="secondPhoneNumber" value="87018722255"/>
-            <column name="creationDate" valueComputed="CURRENT_DATE"/>
+            <column name="date_of_birth" value="03.03.2004"/>
+            <column name="first_phone_number" value="87028723243"/>
+            <column name="second_phone_number" value="87018722255"/>
+            <!--<column name="creation_date" valueComputed="CURRENT_DATE"/>-->
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact2" author="Beksultan">
-        <insert tableName="ContactSQL">
+        <insert tableName="contactsql">
             <column name="name" value="Bibinur"/>
-            <column name="date_Of_Birth" value="16.08.2006"/>
-            <column name="firstPhoneNumber" value="87058721249"/>
-            <column name="secondPhoneNumber" value="87018722167"/>
-            <column name="creationDate" valueComputed="CURRENT_DATE"/>
+            <column name="date_of_birth" value="16.08.2006"/>
+            <column name="first_phone_number" value="87058721249"/>
+            <column name="second_phone_number" value="87018722167"/>
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact3" author="Beksultan">
-        <insert tableName="ContactSQL">
+        <insert tableName="contactsql">
             <column name="name" value="Dima"/>
-            <column name="date_Of_Birth" value="25.01.2005"/>
-            <column name="firstPhoneNumber" value="87048121297"/>
-            <column name="secondPhoneNumber" value="87068772108"/>
-            <column name="creationDate" valueComputed="CURRENT_DATE"/>
+            <column name="date_of_birth" value="25.01.2005"/>
+            <column name="first_phone_number" value="87048121297"/>
+            <column name="second_phone_number" value="87068772108"/>
+
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact4" author="Beksultan">
-        <insert tableName="ContactSQL">
+        <insert tableName="contactsql">
                 <column name="name" value="Beka"/>
-            <column name="date_Of_Birth" value="15.05.2007"/>
-            <column name="firstPhoneNumber" value="87028127654"/>
-            <column name="secondPhoneNumber" value="87098779125"/>
-            <column name="creationDate" valueComputed="CURRENT_DATE"/>
+            <column name="date_of_birth" value="15.05.2007"/>
+            <column name="first_phone_number" value="87028127654"/>
+            <column name="second_phone_number" value="87098779125"/>
+
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact5" author="Beksultan">
-        <insert tableName="ContactSQL">
+        <insert tableName="contactsql">
             <column name="name" value="Zina"/>
-            <column name="date_Of_Birth" value="19.01.1996"/>
-            <column name="firstPhoneNumber" value="87026883434"/>
-            <column name="secondPhoneNumber" value="87077772222"/>
-            <column name="creationDate" valueComputed="CURRENT_DATE"/>
+            <column name="date_of_birth" value="19.01.1996"/>
+            <column name="first_phone_number" value="87026883434"/>
+            <column name="second_phone_number" value="87077772222"/>
+
         </insert>
     </changeSet>
 </databaseChangeLog>

@@ -11,7 +11,7 @@ import lombok.*;
 public class ContactSQLDto {
     private Long id;
     private String name;
-    private String date_Of_Birth;
+    private String dateOfBirth;
     private String firstPhoneNumber;
     private String secondPhoneNumber;
 }

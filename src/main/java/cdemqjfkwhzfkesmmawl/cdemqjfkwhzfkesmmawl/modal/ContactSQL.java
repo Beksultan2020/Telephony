@@ -18,8 +18,11 @@ public class ContactSQL {
     private Long id;
 
     private String name;
-    private String date_Of_Birth;
+    @Column(name = "date_Of_Birth")
+    private String dateOfBirth;
+    @Column(name = "first_phone_number")
     private String firstPhoneNumber;
+    @Column(name = "second_phone_number")
     private String secondPhoneNumber;
-    private LocalDate creationDate;
+    /*private LocalDate creationDate;*/
 }

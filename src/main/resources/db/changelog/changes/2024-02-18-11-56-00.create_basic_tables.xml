@@ -5,24 +5,22 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet id="create_ContactSQL_table" author="Beksultan">
-        <createTable tableName="ContactSQL">
+        <createTable tableName="contactsql">
             <column name="id" autoIncrement="true" type="bigint">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="date_Of_Birth" type="varchar(255)">
+            <column name="date_of_birth" type="varchar(255)">
             </column>
-            <column name="firstPhoneNumber" type="varchar(255)">
+            <column name="first_phone_number" type="varchar(255)">
                 <constraints unique="true"/>
             </column>
-            <column name="secondPhoneNumber" type="varchar(255)">
+            <column name="second_phone_number" type="varchar(255)">
                 <constraints unique="true"/>
             </column>
-            <column name="creationDate" type="date">
-                <constraints nullable="false"/>
-            </column>
+
         </createTable>
     </changeSet>
 </databaseChangeLog>

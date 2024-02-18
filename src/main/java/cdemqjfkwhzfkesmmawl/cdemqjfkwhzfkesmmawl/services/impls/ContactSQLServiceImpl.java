@@ -55,10 +55,10 @@ public class ContactSQLServiceImpl implements ContactSQLService {
         if (findContactSQL == null) {
             ContactSQL newContactSQL = new ContactSQL();
             newContactSQL.setName(contactSQL.getName());
-            newContactSQL.setDate_Of_Birth(contactSQL.getDate_Of_Birth());
+            newContactSQL.setDateOfBirth(contactSQL.getDateOfBirth());
             newContactSQL.setFirstPhoneNumber(contactSQL.getFirstPhoneNumber());
             newContactSQL.setSecondPhoneNumber(contactSQL.getSecondPhoneNumber());
-            newContactSQL.setCreationDate(LocalDate.now());
+            /*newContactSQL.setCreationDate(LocalDate.now());*/
 
             ContactSQL saveInDto = contactSQLRepository.save(newContactSQL);
             return contactSQLMapper.toDto(saveInDto);
@@ -71,7 +71,7 @@ public class ContactSQLServiceImpl implements ContactSQLService {
     public ContactSQLDto updateContactById(Long id,ContactSQLDto contactSQLDto) {
         ContactSQL contactSQL = contactSQLRepository.findById(id).orElseThrow();
         contactSQL.setName(contactSQLDto.getName());
-        contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
+        contactSQL.setDateOfBirth(contactSQLDto.getDateOfBirth());
         contactSQL.setFirstPhoneNumber(contactSQLDto.getFirstPhoneNumber());
         contactSQL.setSecondPhoneNumber(contactSQLDto.getSecondPhoneNumber());
 
@@ -84,7 +84,7 @@ public class ContactSQLServiceImpl implements ContactSQLService {
         ContactSQL contactSQL = contactSQLRepository.findByFirstPhoneNumberOrSecondPhoneNumber(phoneNumber,phoneNumber);
         if (contactSQL != null) {
             contactSQL.setName(contactSQLDto.getName());
-            contactSQL.setDate_Of_Birth(contactSQLDto.getDate_Of_Birth());
+            contactSQL.setDateOfBirth(contactSQLDto.getDateOfBirth());
             contactSQL.setFirstPhoneNumber(contactSQLDto.getFirstPhoneNumber());
             contactSQL.setSecondPhoneNumber(contactSQLDto.getSecondPhoneNumber());
 
