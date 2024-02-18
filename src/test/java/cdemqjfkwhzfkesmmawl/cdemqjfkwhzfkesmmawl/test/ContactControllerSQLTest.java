@@ -31,8 +31,8 @@ public class ContactControllerSQLTest {
 
     @Test
     public void testGetAllContacts() {
-        ContactSQLDto contact1 = createContact("John Doe", "12.12.2001", "1234567890", "0987654321");
-        ContactSQLDto contact2 = createContact("Jane Smith", "01.01.1990", "9876543210", null);
+        ContactSQLDto contact1 = createContact("John", "12.12.2001", "1234567890", "0987654321");
+        ContactSQLDto contact2 = createContact("Jane", "01.01.1990", "9876543210", "1987654327");
 
         when(contactSQLService.getAllContacts()).thenReturn(Arrays.asList(contact1, contact2));
 
