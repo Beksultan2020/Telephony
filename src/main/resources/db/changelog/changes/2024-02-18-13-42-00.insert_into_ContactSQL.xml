@@ -10,7 +10,7 @@
             <column name="date_of_birth" value="03.03.2004"/>
             <column name="first_phone_number" value="87028723243"/>
             <column name="second_phone_number" value="87018722255"/>
-            <!--<column name="creation_date" valueComputed="CURRENT_DATE"/>-->
+            <column name="creation_date" valueComputed="CURRENT_DATE"/>
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact2" author="Beksultan">
@@ -19,6 +19,7 @@
             <column name="date_of_birth" value="16.08.2006"/>
             <column name="first_phone_number" value="87058721249"/>
             <column name="second_phone_number" value="87018722167"/>
+            <column name="creation_date" valueComputed="CURRENT_DATE"/>
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact3" author="Beksultan">
@@ -27,7 +28,7 @@
             <column name="date_of_birth" value="25.01.2005"/>
             <column name="first_phone_number" value="87048121297"/>
             <column name="second_phone_number" value="87068772108"/>
-
+            <column name="creation_date" valueComputed="CURRENT_DATE"/>
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact4" author="Beksultan">
@@ -36,7 +37,7 @@
             <column name="date_of_birth" value="15.05.2007"/>
             <column name="first_phone_number" value="87028127654"/>
             <column name="second_phone_number" value="87098779125"/>
-
+            <column name="creation_date" valueComputed="CURRENT_DATE"/>
         </insert>
     </changeSet>
     <changeSet id="insert_into_ContactSQL_contact5" author="Beksultan">
@@ -45,7 +46,7 @@
             <column name="date_of_birth" value="19.01.1996"/>
             <column name="first_phone_number" value="87026883434"/>
             <column name="second_phone_number" value="87077772222"/>
-
+            <column name="creation_date" valueComputed="CURRENT_DATE"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

@@ -47,7 +47,7 @@ public class ContactControllerSQLTest {
     private ContactSQLDto createContact(String name, String dateOfBirth, String firstPhoneNumber, String secondPhoneNumber) {
         ContactSQL contact = new ContactSQL();
         contact.setName(name);
-        contact.setDate_Of_Birth(dateOfBirth);
+        contact.setDateOfBirth(dateOfBirth);
         contact.setFirstPhoneNumber(firstPhoneNumber);
         contact.setSecondPhoneNumber(secondPhoneNumber);
         return contactSQLService.createContact(contact);

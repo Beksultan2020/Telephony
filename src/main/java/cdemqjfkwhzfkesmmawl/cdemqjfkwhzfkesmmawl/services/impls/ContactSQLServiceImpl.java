@@ -58,7 +58,7 @@ public class ContactSQLServiceImpl implements ContactSQLService {
             newContactSQL.setDateOfBirth(contactSQL.getDateOfBirth());
             newContactSQL.setFirstPhoneNumber(contactSQL.getFirstPhoneNumber());
             newContactSQL.setSecondPhoneNumber(contactSQL.getSecondPhoneNumber());
-            /*newContactSQL.setCreationDate(LocalDate.now());*/
+            newContactSQL.setCreationDate(LocalDate.now());
 
             ContactSQL saveInDto = contactSQLRepository.save(newContactSQL);
             return contactSQLMapper.toDto(saveInDto);

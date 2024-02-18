@@ -20,7 +20,9 @@
             <column name="second_phone_number" type="varchar(255)">
                 <constraints unique="true"/>
             </column>
-
+            <column name="creation_date" type="date">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

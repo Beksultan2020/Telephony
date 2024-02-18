@@ -24,5 +24,6 @@ public class ContactSQL {
     private String firstPhoneNumber;
     @Column(name = "second_phone_number")
     private String secondPhoneNumber;
-    /*private LocalDate creationDate;*/
+    @Column(name = "creation_date")
+    private LocalDate creationDate;
 }
