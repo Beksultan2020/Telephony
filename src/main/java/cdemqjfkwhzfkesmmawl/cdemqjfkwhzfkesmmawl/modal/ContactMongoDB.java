@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Document(collection = "ContactMongoDB")
 public class ContactMongoDB {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String name;

@@ -43,9 +43,6 @@ public class ContactSQLServiceImpl implements ContactSQLService {
         if (contactSQL != null) {
             return contactSQLMapper.toDto(contactSQL);
         }
-        /*else {
-            throw new RuntimeException("Contact not found");
-        }*/
         return null;
     }
 
@@ -66,7 +63,6 @@ public class ContactSQLServiceImpl implements ContactSQLService {
         return null;
     }
 
-    // Надо доработать код для исключении и тд!
     @Override
     public ContactSQLDto updateContactById(Long id,ContactSQLDto contactSQLDto) {
         ContactSQL contactSQL = contactSQLRepository.findById(id).orElseThrow();
