@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "85047110-e6b3-43cc-93cf-fd1021d339b3",
+		"name": "FirstCrudSQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32354320",
+		"_collection_link": "https://universal-zodiac-383556.postman.co/workspace/Crud_Phones~82784d78-5c99-4f71-aae4-606294810c8e/collection/32354320-85047110-e6b3-43cc-93cf-fd1021d339b3?action=share&source=collection_link&creator=32354320"
+	},
+	"item": [
+		{
+			"name": "getAllContacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/firstContacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Bib\",\r\n\"dateOfBirth\":\"16.08.2006\",\r\n\"firstPhoneNumber\":\"87021239085\",\r\n\"secondPhoneNumber\":\"87023214565\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/firstContacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContactById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContactByPhoneNumber",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/phone/87028723243",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"phone",
+						"87028723243"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateContactById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Beksultan\",\r\n\"dateOfBirth\": \"03.03.2005\",\r\n\"firstPhoneNumber\": \"87028723243\",\r\n\"secondPhoneNumber\": \"87018722255\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateContactByPhoneNumber",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Beksultan\",\r\n\"dateOfBirth\": \"03.03.2004\",\r\n\"firstPhoneNumber\": \"87028723243\",\r\n\"secondPhoneNumber\": \"87018722255\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/phone/87028723243",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"phone",
+						"87028723243"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContactById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContactByPhoneNumber",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/phone/87023214565",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"phone",
+						"87023214565"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFilteredContacts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limit\": 1,\r\n    \"offset\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/firstContacts/filteredContacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"firstContacts",
+						"filteredContacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "4f0c3c1b-07e3-4234-a4a3-36e584fa356e",
+		"name": "SecondCrudMongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32354320",
+		"_collection_link": "https://universal-zodiac-383556.postman.co/workspace/Crud_Phones~82784d78-5c99-4f71-aae4-606294810c8e/collection/32354320-4f0c3c1b-07e3-4234-a4a3-36e584fa356e?action=share&source=collection_link&creator=32354320"
+	},
+	"item": [
+		{
+			"name": "getAllContacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/secondContacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Bib\",\r\n\"dateOfBirth\":\"16.08.2006\",\r\n\"firstPhoneNumber\":\"87021239085\",\r\n\"secondPhoneNumber\":\"87023214565\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/secondContacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContactById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/65d35d7e43ff9acd97e86183",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"65d35d7e43ff9acd97e86183"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContactByPhoneNumber",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/phone/87058721249",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"phone",
+						"87058721249"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateContactById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Bibinur-modified\",\r\n\"dateOfBirth\": \"16.08.2006\",\r\n\"firstPhoneNumber\": \"87021239085\",\r\n\"secondPhoneNumber\": \"87023214565\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/65d35d7e43ff9acd97e8617f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"65d35d7e43ff9acd97e8617f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateContactByPhoneNumber",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Dima-modified\",\r\n        \"dateOfBirth\": \"16.08.2006\",\r\n        \"firstPhoneNumber\": \"87021239085\",\r\n        \"secondPhoneNumber\": \"87023214565\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/phone/87048121297",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"phone",
+						"87048121297"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContactById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/65d35d7e43ff9acd97e86183",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"65d35d7e43ff9acd97e86183"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContactByPhoneNumber",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/secondContacts/phone/87077772222",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"secondContacts",
+						"phone",
+						"87077772222"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
