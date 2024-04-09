@@ -22,11 +22,11 @@
 
 ### 2.1 Скачивание проекта
 ```bash
-git clone https://github.com/Beksultan2020/cdemqjfkwhzfkesmmawl/tree/master
+git clone https://github.com/Beksultan2020/Telephony/tree/master
 ```
 -или переходим по этой ссылке в браузере
 ```bash
-https://github.com/Beksultan2020/cdemqjfkwhzfkesmmawl.git
+https://github.com/Beksultan2020/Telephony/tree/master
 ```
 - нажимаем на main и выбираем master
 - нажимаем на commits и там выбираем Final version
@@ -36,7 +36,7 @@ https://github.com/Beksultan2020/cdemqjfkwhzfkesmmawl.git
 ### 2.1.1 Скачивание проекта через github
 - заходим по этой ссылке к финальней версии
 ```bash
-https://github.com/Beksultan2020/cdemqjfkwhzfkesmmawl/tree/edc613f63a5ecb4175715af87f247842f5c3e0d2
+https://github.com/Beksultan2020/Telephony/tree/edc613f63a5ecb4175715af87f247842f5c3e0d2
 ```
 - нажимаем на <> code
 - высветимшее окне нажимаем на Download ZIP
